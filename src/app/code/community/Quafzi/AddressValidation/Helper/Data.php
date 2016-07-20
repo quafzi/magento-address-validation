@@ -48,7 +48,7 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
         ];
     }
 
-    public function check(Mage_Customer_Model_Address $address)
+    public function check(Mage_Customer_Model_Address_Abstract $address)
     {
         $errorFields = [];
         foreach ($this->getAddressFields() as $field) {
@@ -63,7 +63,7 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
         }
     }
 
-    protected function _checkField(Mage_Customer_Model_Address $address, $attribute, $autofix=true)
+    protected function _checkField(Mage_Customer_Model_Address_Abstract $address, $attribute, $autofix=true)
     {
         $condition = $this->getConditions()[$attribute];
         $value = $address->{'get' . ucfirst($attribute)}();
@@ -80,7 +80,7 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
         return $result;
     }
 
-    protected function _checkStreet(Mage_Customer_Model_Address $address)
+    protected function _checkStreet(Mage_Customer_Model_Address_Abstract $address)
     {
         if ($this->_checkField($address, 'street1', false)
             && $this->_checkField($address, 'street2', false)
@@ -109,7 +109,7 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
         return false;
     }
 
-    protected function _checkTelephone(Mage_Customer_Model_Address $address)
+    protected function _checkTelephone(Mage_Customer_Model_Address_Abstract $address)
     {
         $regex = '/^([0-9]{1,30})?$/';
         if (!preg_match($regex, $address->getTelephone())) {

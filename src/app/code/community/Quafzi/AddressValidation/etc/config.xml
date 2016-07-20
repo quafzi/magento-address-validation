@@ -11,20 +11,46 @@
                 <class>Quafzi_AddressValidation_Helper</class>
             </quafzi_addressvalidation>
         </helpers>
+        <models>
+            <quafzi_addressvalidation>
+                <class>Quafzi_AddressValidation_Model</class>
+            </quafzi_addressvalidation>
+        </models>
+        <events>
+            <customer_address_validation_after>
+                <observers>
+                    <add_custom_validation>
+                        <class>quafzi_addressvalidation/observer</class>
+                        <method>validateAddress</method>
+                    </add_custom_validation>
+                </observers>
+            </customer_address_validation_after>
+        </events>
     </global>
     <default>
         <customer>
             <address>
+                <validation_error_message>Please review your address:</validation_error_message>
                 <regex_firstname>/^.{2,30}$/</regex_firstname>
+                <error_firstname>Your firstname should contain at least 2 and max. 30 characters.</error_firstname>
                 <regex_lastname>/^.{2,30}$/</regex_lastname>
+                <error_lastname>Your lastname should contain at least 2 and max. 30 characters.</error_lastname>
                 <regex_company>/^(.{2,30})?$/</regex_company>
+                <error_company>Your company name should either be empty or contain at least 2 and max. 30 characters.</error_company>
                 <regex_street1>/^.{2,30}$/</regex_street1>
-                <regex_street2>/^.{1,30}$/</regex_street2>
+                <error_street1>Your street name should contain at least 2 and max. 30 characters.</error_street1>
+                <regex_street2>/^.{1,10}$/</regex_street2>
+                <error_street2>Your street number does not look like a street number... Please enter at least one number, max. 10.</error_street2>
                 <regex_street3>/^.{0,30}$/</regex_street3>
+                <error_street3>Your first additional street row should contain less than 30 characters.</error_street3>
                 <regex_street4>/^.{0,30}$/</regex_street4>
+                <error_street4>Your second additional street row should contain less than 30 characters.</error_street4>
                 <regex_postcode>/^.{4,15}$/</regex_postcode>
+                <error_postcode>Your postcode should consist at least 4 and max. 15 characters.</error_postcode>
                 <regex_city>/^.{1,30}$/</regex_city>
+                <error_city>City should contain at least 1 and max. 30 characters.</error_city>
                 <regex_telephone>/^([0-9]{1,30})?$/</regex_telephone>
+                <error_telephone>Your phone number should contain numbers, only. Max. length: 30 characters.</error_telephone>
             </address>
         </customer>
     </default>
