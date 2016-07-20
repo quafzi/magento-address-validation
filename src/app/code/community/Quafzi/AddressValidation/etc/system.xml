@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Quafzi_AddressValidation
+ *
+ * This file is part of the Quafzi_AddressValidation extension.
+ * Please do not edit or add to this file if you wish to upgrade it to newer
+ * versions in the future.
+ *
+ * @category   Quafzi_AddressValidation
+ * @package    Quafzi_AddressValidation
+ * @copyright  © 2016 by Thomas Birke <magento@netextreme.de>
+ * @license    OSL
+ */
+-->
+<config>
+    <sections>
+        <customer>
+            <groups>
+                <address>
+                    <fields>
+                        <regex_firstname translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for firstname validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_firstname>
+                        <regex_lastname translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for lastname validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_lastname>
+                        <regex_company translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for company validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_company>
+                        <regex_street2 translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for validation of street line 2</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_street2>
+                        <regex_street3 translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for validation of street line 3</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>240</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_street3>
+                        <regex_street4 translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for validation of street line 4</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>250</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_street4>
+                        <regex_postcode translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for postcode validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_postcode>
+                        <regex_city translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for city validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_city>
+                        <regex_telephone translate="label" module="Quafzi_AddressValidation">
+                            <label>Regular expression for telephone validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_telephone>
+                    </fields>
+                </address>
+            </groups>
+        </customer>
+    </sections>
+</config>

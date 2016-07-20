@@ -1,0 +1,15 @@
+{
+    "name": "quafzi/magento-address-validation",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "Magento module to validate customer addresses",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name":"Thomas Birke",
+            "email":"magento@netextreme.de"
+        }
+    ]
+}

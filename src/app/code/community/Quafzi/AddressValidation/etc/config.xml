@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Quafzi_AddressValidation>
+            <version>1.0.0</version>
+        </Quafzi_AddressValidation>
+    </modules>
+    <global>
+        <helpers>
+            <quafzi_addressvalidation>
+                <class>Quafzi_AddressValidation_Helper</class>
+            </quafzi_addressvalidation>
+        </helpers>
+    </global>
+    <default>
+        <customer>
+            <address>
+                <regex_firstname>/^.{2,30}$/</regex_firstname>
+                <regex_lastname>/^.{2,30}$/</regex_lastname>
+                <regex_company>/^(.{2,30})?$/</regex_company>
+                <regex_street1>/^.{2,30}$/</regex_street1>
+                <regex_street2>/^.{1,30}$/</regex_street2>
+                <regex_street3>/^.{0,30}$/</regex_street3>
+                <regex_street4>/^.{0,30}$/</regex_street4>
+                <regex_postcode>/^.{4,15}$/</regex_postcode>
+                <regex_city>/^.{1,30}$/</regex_city>
+                <regex_telephone>/^([0-9]{1,30})?$/</regex_telephone>
+            </address>
+        </customer>
+    </default>
+</config>
