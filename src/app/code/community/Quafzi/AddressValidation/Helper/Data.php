@@ -68,7 +68,9 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
         $condition = $this->getConditions()[$attribute];
         $value = $address->{'get' . ucfirst($attribute)}();
         $result = (is_string($condition)) ? preg_match($condition, $value) : $condition($address);
-        $trimmed = trim($value);
+        if (is_string($value)) {
+            $trimmed = trim($value);
+        }
         if ($autofix && !$result && is_string($value) && strlen($trimmed) && $trimmed !== $value) {
             $address->{'set' . ucfirst($attribute)}($trimmed);
             if ($this->_checkField($address, $attribute)) {
