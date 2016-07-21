@@ -75,10 +75,34 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </error_company>
+                        <error_street translate="label" module="quafzi_addressvalidation">
+                            <label>Generic error message for failing street validation</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </error_street>
+                        <regex_street1 translate="label" module="quafzi_addressvalidation">
+                            <label>Regular expression for validation of street line 1</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>235</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regex_street1>
+                        <error_street1 translate="label" module="quafzi_addressvalidation">
+                            <label>Error message for failing validation of street line 1</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>240</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </error_street1>
                         <regex_street2 translate="label" module="quafzi_addressvalidation">
                             <label>Regular expression for validation of street line 2</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>230</sort_order>
+                            <sort_order>245</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -86,7 +110,7 @@
                         <error_street2 translate="label" module="quafzi_addressvalidation">
                             <label>Error message for failing validation of street line 2</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>235</sort_order>
+                            <sort_order>250</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -94,7 +118,7 @@
                         <regex_street3 translate="label" module="quafzi_addressvalidation">
                             <label>Regular expression for validation of street line 3</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>240</sort_order>
+                            <sort_order>255</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -102,7 +126,7 @@
                         <error_street3 translate="label" module="quafzi_addressvalidation">
                             <label>Error message for failing validation of street line 3</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>245</sort_order>
+                            <sort_order>260</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -110,7 +134,7 @@
                         <regex_street4 translate="label" module="quafzi_addressvalidation">
                             <label>Regular expression for validation of street line 4</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>250</sort_order>
+                            <sort_order>265</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -118,7 +142,7 @@
                         <error_street4 translate="label" module="quafzi_addressvalidation">
                             <label>Error message for failing validation of street line 4</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>255</sort_order>
+                            <sort_order>270</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -126,7 +150,7 @@
                         <regex_postcode translate="label" module="quafzi_addressvalidation">
                             <label>Regular expression for postcode validation</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>260</sort_order>
+                            <sort_order>275</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -134,7 +158,7 @@
                         <error_postcode translate="label" module="quafzi_addressvalidation">
                             <label>Error message for failing postcode validation</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>265</sort_order>
+                            <sort_order>280</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -142,7 +166,7 @@
                         <regex_city translate="label" module="quafzi_addressvalidation">
                             <label>Regular expression for city validation</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>270</sort_order>
+                            <sort_order>285</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -150,7 +174,7 @@
                         <error_city translate="label" module="quafzi_addressvalidation">
                             <label>Error message for failing city validation</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>275</sort_order>
+                            <sort_order>290</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -158,7 +182,7 @@
                         <regex_telephone translate="label" module="quafzi_addressvalidation">
                             <label>Regular expression for telephone validation</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>280</sort_order>
+                            <sort_order>295</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -166,7 +190,7 @@
                         <error_telephone translate="label" module="quafzi_addressvalidation">
                             <label>Error message for failing telephone validation</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>285</sort_order>
+                            <sort_order>300</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>

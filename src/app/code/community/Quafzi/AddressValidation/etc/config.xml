@@ -37,6 +37,7 @@
                 <error_lastname>Your lastname should contain at least 2 and max. 30 characters.</error_lastname>
                 <regex_company>/^(.{2,30})?$/</regex_company>
                 <error_company>Your company name should either be empty or contain at least 2 and max. 30 characters.</error_company>
+                <error_street>Please enter your street and house number as expected: Street name into the first input, house number into the second one.</error_street>
                 <regex_street1>/^.{2,30}$/</regex_street1>
                 <error_street1>Your street name should contain at least 2 and max. 30 characters.</error_street1>
                 <regex_street2>/^.{1,10}$/</regex_street2>
