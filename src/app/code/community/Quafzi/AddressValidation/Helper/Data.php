@@ -75,7 +75,9 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
             $address->{'set' . ucfirst($attribute)}($trimmed);
             if ($this->_checkField($address, $attribute)) {
                 $this->_log('autofix ' . $attribute . ' by trimming its value of address ' . $address->getId());
-                $address->getResource()->saveAttribute($address, $attribute);
+                if ($address->getId()) {
+                    $address->save();
+                }
                 return true;
             }
         }
@@ -104,7 +106,9 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
             && $this->_checkField($address, 'street4', false)
         ) {
             $after = json_encode($address->getStreet());
-            $address->getResource()->saveAttribute($address, 'street');
+            if ($address->getId()) {
+                $address->save();
+            }
             $this->_log('autofix street ' . "$before\t => $after" . ' of address ' . $address->getId());
             return true;
         }
@@ -122,7 +126,9 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
             if (preg_match($regex, $after)) {
                 $this->_log('autofix telephone ' . "$before\t => $after" . ' of address ' . $address->getId());
                 $address->setTelephone($after);
-                $address->getResource()->saveAttribute($address, 'telephone');
+                if ($address->getId()) {
+                    $address->save();
+                }
             }
         }
         return preg_match($regex, $address->getTelephone());
