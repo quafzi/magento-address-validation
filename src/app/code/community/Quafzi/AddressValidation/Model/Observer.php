@@ -14,13 +14,10 @@ class Quafzi_AddressValidation_Model_Observer
         try {
             $helper->check($address);
         } catch (Quafzi_AddressValidation_Model_Exception $e) {
-            $errorFields = $e->getFields();
-            if (count($errorFields)) {
-                $address->addError(
-                    Mage::getStoreConfig('customer/address/validation_error_message')
-                );
-            }
-            foreach ($errorFields as $field => $value) {
+            $address->addError(
+                Mage::getStoreConfig('customer/address/validation_error_message')
+            );
+            foreach ($e->getFields() as $field => $value) {
                 $address->addError(
                     Mage::getStoreConfig('customer/address/error_' . $field)
                 );
@@ -28,4 +25,3 @@ class Quafzi_AddressValidation_Model_Observer
         }
     }
 }
-
