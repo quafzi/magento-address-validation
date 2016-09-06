@@ -6,6 +6,16 @@
         </Quafzi_AddressValidation>
     </modules>
     <global>
+        <blocks>
+            <quafzi_addressvalidation>
+                <class>Quafzi_AddressValidation_Block</class>
+            </quafzi_addressvalidation>
+            <checkout>
+                <rewrite>
+                    <onepage_shipping>Quafzi_AddressValidation_Block_Onepage_Shipping</onepage_shipping>
+                </rewrite>
+            </checkout>
+        </blocks>
         <helpers>
             <quafzi_addressvalidation>
                 <class>Quafzi_AddressValidation_Helper</class>
@@ -16,17 +26,19 @@
                 <class>Quafzi_AddressValidation_Model</class>
             </quafzi_addressvalidation>
         </models>
-        <events>
-            <customer_address_validation_after>
-                <observers>
-                    <add_custom_validation>
-                        <class>quafzi_addressvalidation/observer</class>
-                        <method>validateAddress</method>
-                    </add_custom_validation>
-                </observers>
-            </customer_address_validation_after>
-        </events>
     </global>
+    <frontend>
+        <events>
+            <controller_action_postdispatch_checkout_onepage_saveBilling>
+                <observers>
+                    <validate_billing_address>
+                        <class>quafzi_addressvalidation/observer</class>
+                        <method>forceDifferingShippingAddressForInvalidBillingAddress</method>
+                    </validate_billing_address>
+                </observers>
+            </controller_action_postdispatch_checkout_onepage_saveBilling>
+        </events>
+    </frontend>
     <default>
         <customer>
             <address>

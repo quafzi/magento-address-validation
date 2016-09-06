@@ -24,4 +24,30 @@ class Quafzi_AddressValidation_Model_Observer
             }
         }
     }
+
+    public function forceDifferingShippingAddressForInvalidBillingAddress($observer)
+    {
+        $action = $observer->getEvent()->getControllerAction();
+        $data = $action->getRequest()->getPost('billing', array());
+        $addressId = $action->getRequest()->getPost('billing_address_id', false);
+        if (!$addressId) {
+            return;
+        }
+        if (!isset($data['use_for_shipping']) || $data['use_for_shipping'] == 0) {
+            return;
+        }
+        $address = Mage::getModel('customer/address')->load($addressId);
+        if (!$address->getId()) {
+            return;
+        }
+        try {
+            Mage::helper('quafzi_addressvalidation')->check($address);
+        } catch (Quafzi_AddressValidation_Model_Exception $e) {
+            $response = $action->getResponse();
+            $result = Mage::helper('core')->jsonDecode($response->getBody());
+            $result['goto_section'] = 'shipping';
+            $result['forceDifferingShippingAddress'] = true;
+            $response->setBody(Mage::helper('core')->jsonEncode($result));
+        }
+    }
 }
