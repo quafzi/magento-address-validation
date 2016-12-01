@@ -101,7 +101,8 @@ class Quafzi_AddressValidation_Helper_Data extends Mage_Core_Helper_Data
             trim($parts['care_of'] . ' ' . $address->getStreet(2))
         ]);
         if ($this->_checkField($address, 'street1', false)
-            && $this->_checkField($address, 'street2', false)
+            // skipping second street line for Packstation addresses
+            && ($address->getDhlaccount() || $this->_checkField($address, 'street2', false))
             && $this->_checkField($address, 'street3', false)
             && $this->_checkField($address, 'street4', false)
         ) {
